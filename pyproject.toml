@@ -1,0 +1,26 @@
+[project]
+name = "reelshort-parser"
+version = "1.0.0"
+description = "Universal ReelShort scraper - collects series metadata using proxy with resumable progress"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.14.1",
+    "anyio>=4.14.1",
+    "pydantic-settings>=2.14.2",
+]
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D", "F811", "ANN201", "RUF001", "N818", "PLR2004"]
+
+[tool.ruff.lint.pylint]
+max-args = 8
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
