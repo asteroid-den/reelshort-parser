@@ -157,7 +157,7 @@ def make_row(s: dict, meta: dict | None) -> dict:
     slug = prepare_slug(title)
     series_url = f"{settings.base_url}/movie/{slug}-{series_id}"
     cover = data.get("series_pic", "")
-    desc = data.get("special_desc", "")
+    desc = (data.get("special_desc", "") or "").replace("\r\n", " ").replace("\n", " ").replace("\r", " ").strip()
     genre = data.get("genre_category", "")
     eps = data.get("chapter_count", "")
     tags = data.get("tags", "")
